@@ -25,8 +25,11 @@ const SlotList = ({bookedSlots, warehouse, date, duration}) => {
       let slotEndTime = moment.utc(slot.endTime)
       let endTime = time.clone()
       endTime.add(duration, 'minutes')
+
       if (startTime.isBetween(slotStartTime, slotEndTime) ||
           endTime.isBetween(slotStartTime, slotEndTime) ||
+          slotStartTime.isBetween(startTime, endTime) ||
+          slotEndTime.isBetween(startTime, endTime) ||
           startTime.isSame(slotStartTime) ||
           endTime.isSame(slotEndTime)) {
         isTaken = true

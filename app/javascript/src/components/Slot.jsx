@@ -6,7 +6,7 @@ import ApiClient from "../lib/apiClient";
 const Slot = ({time, available, duration, warehouse}) => {
   const bookSlot = (ev) => {
     ev.preventDefault()
-    
+
     let startTime = moment(time).utc().format()
     let endTime = moment(time.add(duration, 'minutes')).utc().format()
     ApiClient.create('slot', {
