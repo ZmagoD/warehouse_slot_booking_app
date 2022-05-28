@@ -12,13 +12,11 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_04_28_184402) do
   create_table "slots", force: :cascade do |t|
-    t.time "start_time", null: false
-    t.time "end_time", null: false
-    t.string "uuid", null: false
+    t.datetime "start_time", null: false
+    t.datetime "end_time", null: false
     t.integer "warehouse_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["uuid"], name: "index_slots_on_uuid"
     t.index ["warehouse_id"], name: "index_slots_on_warehouse_id"
   end
 

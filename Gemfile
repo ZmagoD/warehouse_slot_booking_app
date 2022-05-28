@@ -9,8 +9,9 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 gem 'jsbundling-rails'
 gem 'turbo-rails'
-gem 'stimulus-rails'
+gem 'turbo-rails'
 gem 'redis', '~> 4.0'
+gem 'cssbundling-rails'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
