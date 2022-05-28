@@ -13,9 +13,14 @@ const Slot = ({time, available, duration, warehouse}) => {
       startTime: startTime,
       endTime: endTime,
       warehouseId: warehouse.id
-    }).then(() => {
-        window.alert('Your slot is booked')
+    }).then(({data}) => {
+        let startTime = moment(data.startTime)
+        let endTime = moment(data.endTime)
+        window.alert(`We booked a slot for you between ${startTime.format('HH:mm')} and ${endTime.format('HH:mm')}`)
         window.location.reload()
+    }).catch(() => {
+      window.alert('Something went wrong')
+      window.location.reload()
     })
   }
 
